@@ -108,7 +108,7 @@
             $sql = "SELECT * FROM intervals 
             		LEFT JOIN sets_intervals ON intervals.interval_id = sets_intervals.fk_interval_id  
             		LEFT JOIN sets ON sets_intervals.fk_set_id = sets.set_id 
-            		WHERE intervals.fk_user_id = $sessionUID AND sets.set_id = $sid"; 
+            		WHERE intervals.fk_user_id = $sessionUID AND sets.set_id = $sid ORDER BY sets_intervals.order DESC"; 
             $result = $connect->query($sql);
             # INNER JOIN users ON fk_user_id = users.user_id 
  

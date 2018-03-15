@@ -29,9 +29,13 @@ if($_GET) {
     $sql2 = "INSERT INTO sets_intervals (fk_set_id, fk_interval_id) 
     VALUES( '$sid', LAST_INSERT_ID());
     ";
+    $sql3 = " 
+        UPDATE `sets_intervals` SET
+        `order` = `order` + 1
+        WHERE `fk_set_id` = $sid";
 
 
-    if($connect->query($sql) === TRUE && $connect->query($sql2)) {
+    if($connect->query($sql) === TRUE && $connect->query($sql2) && $connect->query($sql3)) {
         echo "<p>New Record Successfully Created</p>";
         echo "<a href='../int_crud/int_create.php'><button type='button'>Back</button></a>";
         echo "<a href='../user_log_reg/index.php'><button type='button'>Home</button></a>";
