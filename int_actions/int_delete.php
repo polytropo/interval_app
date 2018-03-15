@@ -10,17 +10,20 @@
 
   exit;
 }
+$id = $_POST['id'];
 
 if($_POST) {
 
     $id = $_POST['id'];
-    #$userSession = $_SESSION['user'];
+    $userSession = $_SESSION['user'];
+    
 
 
-    $sql = "DELETE FROM intervals WHERE interval_id = {$id}";
-
-    if($connect->query($sql) === TRUE) {
-        echo "<p>Set Successfully Deleted</p>";
+    $sql = "DELETE FROM intervals WHERE interval_id = $id AND fk_user_id = $userSession";
+    $sql2 = "DELETE FROM sets_intervals WHERE fk_interval_id = $id";
+    
+    if($connect->query($sql) === TRUE && $connect->query($sql2) === TRUE) {
+        echo "<p>Interval Successfully Deleted</p>";
         echo "<a href='../home.php'><button type='button'>Home</button></a>";
 
     } else {

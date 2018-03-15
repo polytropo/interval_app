@@ -26,7 +26,7 @@ if($_GET['id']) {
 <h3>Do you really want to delete this interval?</h3>
 <form action="../int_actions/int_delete.php" method="post">
 
-    <input type="hidden" name="id" value="<?php echo $data['int_id'] ?>" />
+    <input type="hidden" name="id" value="<?php echo $data['interval_id'] ?>" />
     <button type="submit">Yes, delete it!</button>
     <a href="../home.php"><button type="button">No, go back!</button></a>
 

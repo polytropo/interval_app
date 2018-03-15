@@ -13,7 +13,7 @@
 
 if(isset($_GET['id'])) {
     $sid = $_GET['id'];
-    echo $sid;
+    
 }
 
 ?>
@@ -62,7 +62,7 @@ if(isset($_GET['id'])) {
             </tr>
             <tr>
 
-                <td><button type="submit">Insert set</button></td>
+                <td><button type="submit">Create Interval</button></td>
                 <td><a href="../home.php"><button type="button">Back</button></a></td>
 
             </tr>
